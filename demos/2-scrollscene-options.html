@@ -6,10 +6,11 @@ layout: none
 	<head>
 		<title>Learn ScrollMagic - 2 - ScrollScene Options</title>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-		<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.js"></script>
-		<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.debug.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 
 		<style>
 			html, body {
@@ -66,7 +67,7 @@ layout: none
 			var controller;
 
 			$(function() {
-				controller = new ScrollMagic();
+				controller = new ScrollMagic.Controller();
 
 				// First Animation
 				var changeToRed = TweenMax.to('#block1', 0.5, {
@@ -74,7 +75,7 @@ layout: none
 					color: 'white'
 				});
 
-				var whenInContainer = new ScrollScene({
+				var whenInContainer = new ScrollMagic.Scene({
 					triggerElement: '#container1',
 					offset: 400
 				})
@@ -87,7 +88,7 @@ layout: none
 					color: 'white'
 				});
 
-				var whenInContainer2 = new ScrollScene({
+				var whenInContainer2 = new ScrollMagic.Scene({
 					triggerElement: '#container2',
 					offset: 200,
 					duration: 100
@@ -101,7 +102,7 @@ layout: none
 					color: 'white'
 				});
 
-				var whenInContainer3 = new ScrollScene({
+				var whenInContainer3 = new ScrollMagic.Scene({
 					triggerElement: '#container3',
 					duration: $('#container3').outerHeight(),
 					reverse: false
@@ -115,7 +116,7 @@ layout: none
 					color: 'white'
 				});
 
-				var whenInContainer4 = new ScrollScene({
+				var whenInContainer4 = new ScrollMagic.Scene({
 					triggerElement: '#container4',
 					duration: $('#container4').outerHeight(),
 					loglevel: 3
